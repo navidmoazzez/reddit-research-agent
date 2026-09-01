@@ -1,12 +1,15 @@
 # Reddit Research Agent
 
-Reddit research for any AI agent, read-only. It finds the communities where a topic is actually discussed, ranks threads by how much real conversation they hold, pulls the comments, and hands back verbatim quotes with a link to every single one.
-
+[![npm](https://img.shields.io/npm/v/@thenavidm%2Freddit-research-agent?color=orange&label=npm)](https://www.npmjs.com/package/@thenavidm/reddit-research-agent)
 [![License](https://img.shields.io/badge/License-MIT-blue)](./LICENSE)
 [![YouTube](https://img.shields.io/badge/YouTube-@thenavidm-red?logo=youtube&logoColor=white)](https://youtube.com/@thenavidm?sub_confirmation=1)
 [![X](https://img.shields.io/badge/X-@thenavidm-black?logo=x)](https://x.com/thenavidm)
 
-Built by [Navid Moazzez](https://navid.me).
+Reddit research for any AI agent, read-only. It finds the communities where a topic is actually discussed, ranks threads by how much real conversation they hold, pulls the comments, and hands back verbatim quotes with a link to every single one.
+
+There are no write tools. It cannot post, reply, vote, or delete.
+
+Built and maintained by [Navid Moazzez](https://navid.me).
 
 ```
 You: what do people actually complain about with standing desks?
@@ -29,8 +32,6 @@ Claude: Running a research pass on Reddit.
 
   Every quote links to the exact comment. Want the full report?
 ```
-
-There are no write tools. This server cannot post, reply, vote, or delete, and there is no setting that turns that on.
 
 ## Contents
 
@@ -450,9 +451,9 @@ Every setting is an environment variable, and every one has a working default ex
 
 **Can it post for me?** No. There are no write tools, and this is a property of the package rather than a setting you could flip.
 
-**Does it cost anything?** No. It uses Reddit's official API, which is free at this volume. There are no credits to buy and no third-party service in the path.
+**Does it cost anything?** Not for personal or internal research. Reddit's Data API has a free tier at 100 queries a minute per client id, which is what this server uses, and there are no credits to buy and no third-party service in the path. Commercial use at scale is a separate paid agreement with Reddit, so read their terms before you build a product on top of it.
 
-**How many requests does a research pass use?** Roughly one per subreddit searched plus one per thread pulled, so a default pass is about 13. Authenticated apps get 100 a minute.
+**How many requests does a research pass use?** Two for discovery, then one per subreddit searched and one per thread pulled. A default pass with five discovered subreddits and eight threads is about 15. Naming the subreddits yourself skips the two discovery calls. Authenticated apps get 100 a minute, and repeated passes on the same topic come from cache.
 
 **Can I use this data commercially?** Read Reddit's Responsible Builder Policy, linked in [section 9](#9-reading-the-results-honestly). Reselling the data and training models on it are both restricted.
 
@@ -464,6 +465,10 @@ Every setting is an environment variable, and every one has a working default ex
 |---|---|---|
 | [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) | MIT | The MCP server and stdio transport |
 | [zod](https://github.com/colinhacks/zod) | MIT | Tool argument schemas and validation |
+
+## Versions
+
+See [VERSIONS.md](VERSIONS.md).
 
 ## About the author
 
@@ -489,4 +494,4 @@ Not affiliated with, endorsed by, or connected to Reddit, Inc.
 
 ---
 
-© 2026 NM Media. Made with ❤️ by [Navid Moazzez](https://navid.me).
+© 2026 [NM Media](https://navid.media). Made with ❤️ by [Navid Moazzez](https://navid.me).
