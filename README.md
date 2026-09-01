@@ -75,19 +75,7 @@ Node 20 or newer, plus free Reddit API credentials. Getting those is [section 3]
 npx -y @thenavidm/reddit-research-agent --version
 ```
 
-> **Not on npm yet.** The package name above is reserved for the published release, so that command will not resolve today. Until it is published, install from source with the three lines below. Every client example in [section 4](#4-connect-your-client) gives both forms, and the source form works right now.
-
-```bash
-git clone https://github.com/navidmoazzez/reddit-research-agent.git
-cd reddit-research-agent
-npm install && npm run build
-```
-
-That produces `dist/index.js`. Note the absolute path to it, because that is what you point your client at:
-
-```bash
-pwd   # e.g. /Users/you/code/reddit-research-agent
-```
+That is the whole install. `npx` fetches it on demand, so there is nothing to update later.
 
 ## 3. Reddit credentials
 
@@ -114,22 +102,11 @@ You do not need your Reddit username or password. This server only ever uses app
 
 ### Claude Code
 
-From npm, once published:
-
 ```bash
 claude mcp add reddit-research -s user \
   -e REDDIT_CLIENT_ID=your_client_id \
   -e REDDIT_CLIENT_SECRET=your_client_secret \
   -- npx -y @thenavidm/reddit-research-agent
-```
-
-From your local build, which works today:
-
-```bash
-claude mcp add reddit-research -s user \
-  -e REDDIT_CLIENT_ID=your_client_id \
-  -e REDDIT_CLIENT_SECRET=your_client_secret \
-  -- node /absolute/path/to/reddit-research-agent/dist/index.js
 ```
 
 Check it registered:
@@ -165,24 +142,7 @@ If you would rather open it directly:
   xdg-open ~/.config/Claude/claude_desktop_config.json
   ```
 
-3. **If the file is empty or brand new**, paste this whole thing. Replace the path with your own checkout:
-
-```json
-{
-  "mcpServers": {
-    "reddit-research": {
-      "command": "node",
-      "args": ["/absolute/path/to/reddit-research-agent/dist/index.js"],
-      "env": {
-        "REDDIT_CLIENT_ID": "your_client_id",
-        "REDDIT_CLIENT_SECRET": "your_client_secret"
-      }
-    }
-  }
-}
-```
-
-Once the package is on npm, this becomes:
+3. **If the file is empty or brand new**, paste this whole thing:
 
 ```json
 {
@@ -209,8 +169,8 @@ Once the package is on npm, this becomes:
       "args": ["something"]
     },
     "reddit-research": {
-      "command": "node",
-      "args": ["/absolute/path/to/reddit-research-agent/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "@thenavidm/reddit-research-agent"],
       "env": {
         "REDDIT_CLIENT_ID": "your_client_id",
         "REDDIT_CLIENT_SECRET": "your_client_secret"
@@ -236,7 +196,7 @@ That comma matters more than it looks. One missing or extra comma makes the whol
 
 The two failures that account for almost everything:
 
-- **Node not found.** Claude Desktop does not use your shell's PATH, so a Node installed through nvm or Homebrew is often invisible to it. Run `which node` in a terminal and put that absolute path in `"command"`, for example `/Users/you/.nvm/versions/node/v22.11.0/bin/node`.
+- **`npx` not found.** Claude Desktop does not use your shell's PATH, so a Node installed through nvm or Homebrew is often invisible to it. Run `which npx` in a terminal and put that absolute path in `"command"`, for example `/Users/you/.nvm/versions/node/v22.11.0/bin/npx`.
 - **Malformed JSON**, as described in step 4.
 
 ### Cursor
@@ -259,8 +219,8 @@ For one project only, put the same block in `.cursor/mcp.json` at the project ro
   "mcp": {
     "servers": {
       "reddit-research": {
-        "command": "node",
-        "args": ["/absolute/path/to/reddit-research-agent/dist/index.js"],
+        "command": "npx",
+        "args": ["-y", "@thenavidm/reddit-research-agent"],
         "env": {
           "REDDIT_CLIENT_ID": "your_client_id",
           "REDDIT_CLIENT_SECRET": "your_client_secret"
@@ -289,8 +249,8 @@ Codex uses TOML, not JSON. Open `~/.codex/config.toml` and add:
 
 ```toml
 [mcp_servers.reddit-research]
-command = "node"
-args = ["/absolute/path/to/reddit-research-agent/dist/index.js"]
+command = "npx"
+args = ["-y", "@thenavidm/reddit-research-agent"]
 
 [mcp_servers.reddit-research.env]
 REDDIT_CLIENT_ID = "your_client_id"
@@ -304,6 +264,9 @@ Save and start a new `codex` session.
 If you want to change the ranking or add an intent pattern:
 
 ```bash
+git clone https://github.com/navidmoazzez/reddit-research-agent.git
+cd reddit-research-agent
+npm install
 npm run dev        # tsc --watch
 npm test           # vitest
 npm run inspect    # build, then open the MCP Inspector
@@ -316,7 +279,8 @@ npm run inspect    # build, then open the MCP Inspector
 From a terminal, with your credentials in the environment:
 
 ```bash
-REDDIT_CLIENT_ID=xxx REDDIT_CLIENT_SECRET=yyy node dist/index.js doctor
+REDDIT_CLIENT_ID=xxx REDDIT_CLIENT_SECRET=yyy \
+  npx -y @thenavidm/reddit-research-agent doctor
 ```
 
 It makes one real request to Reddit and tells you what came back:
@@ -439,7 +403,7 @@ Every setting is an environment variable, and every one has a working default ex
 
 **A subreddit comes back as skipped.** It is private, quarantined, banned, or restricted to logged-in users. `research_topic` records the reason per subreddit in `subredditsSearched` and carries on with the rest rather than failing the whole run.
 
-**The server does not appear in my client at all.** It is almost never this package. Check that `node` is on the PATH your client sees, that the path to `dist/index.js` is absolute and correct, and that the config file is valid JSON. See the Claude Desktop steps in [section 4](#4-connect-your-client), which apply in spirit to every client.
+**The server does not appear in my client at all.** It is almost never this package. Check that `npx` is on the PATH your client sees, and that the config file is valid JSON. See the Claude Desktop steps in [section 4](#4-connect-your-client), which apply in spirit to every client.
 
 **Results feel thin.** Widen `timeFilter` to `all`, raise `threads`, or name the subreddits yourself instead of letting discovery pick them. Discovery is good, but you often know the community better than a search does.
 
