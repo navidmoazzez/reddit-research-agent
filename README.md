@@ -1,3 +1,5 @@
+<img src="https://cdn.navid.media/connectors/reddit-icon.png" alt="" width="72" height="72">
+
 # Reddit Research Agent
 
 [![npm](https://img.shields.io/npm/v/@thenavidm%2Freddit-research-agent?color=orange&label=npm)](https://www.npmjs.com/package/@thenavidm/reddit-research-agent)
@@ -9,7 +11,7 @@ Reddit research for any AI agent, read-only. It finds the communities where a to
 
 There are no write tools. It cannot post, reply, vote, or delete.
 
-Built and maintained by [Navid Moazzez](https://navid.me).
+Built and maintained by [Navid Moazzez](https://navid.me?utm_source=github&utm_medium=readme&utm_campaign=reddit-research-agent).
 
 ```
 You: what do people actually complain about with standing desks?
@@ -476,7 +478,7 @@ Navid Moazzez is a leading AI business strategist, and the host of the AI Creato
 
 **Links**
 
-- Personal website: [navid.me](https://navid.me)
+- Personal website: [navid.me](https://navid.me?utm_source=github&utm_medium=readme&utm_campaign=reddit-research-agent)
 - YouTube: [@thenavidm](https://youtube.com/@thenavidm?sub_confirmation=1) and [@thenavidai](https://youtube.com/@thenavidai?sub_confirmation=1)
 - X: [@thenavidm](https://x.com/thenavidm)
 - Instagram: [@thenavidm](https://instagram.com/thenavidm)
@@ -494,4 +496,4 @@ Not affiliated with, endorsed by, or connected to Reddit, Inc.
 
 ---
 
-© 2026 [NM Media](https://navid.media). Made with ❤️ by [Navid Moazzez](https://navid.me).
+© 2026 [NM Media](https://navid.media?utm_source=github&utm_medium=readme&utm_campaign=reddit-research-agent). Made with ❤️ by [Navid Moazzez](https://navid.me?utm_source=github&utm_medium=readme&utm_campaign=reddit-research-agent).
