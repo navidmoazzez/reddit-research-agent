@@ -1,0 +1,63 @@
+{
+  "name": "@thenavidm/reddit-research-agent",
+  "version": "0.1.0",
+  "description": "Read-only Reddit research MCP server. Finds the subreddits where a topic is actually discussed, ranks threads by real conversation rather than upvotes, harvests comments, and returns verbatim quotes tagged by intent with a permalink on every one. Works with Claude Code, Claude Desktop, Cursor, Windsurf, and any MCP-compatible client.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "reddit-research-agent": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "doctor": "node dist/index.js doctor",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "inspect": "npm run build && npx @modelcontextprotocol/inspector node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  },
+  "license": "MIT",
+  "author": "Navid Moazzez <https://navid.me>",
+  "homepage": "https://navid.me",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navidmoazzez/reddit-research-agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/navidmoazzez/reddit-research-agent/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "reddit",
+    "reddit-api",
+    "research",
+    "market-research",
+    "voice-of-customer",
+    "mcp-server",
+    "claude",
+    "claude-code",
+    "ai-agents",
+    "llm-tools"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "SKILL.md",
+    "LICENSE"
+  ]
+}
