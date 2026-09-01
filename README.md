@@ -1,4 +1,4 @@
-<img src="https://cdn.navid.media/connectors/reddit-icon.png" alt="" width="72" height="72">
+<img src="https://cdn.navid.media/connectors/reddit-icon.png" alt="Reddit" width="88">
 
 # Reddit Research Agent
 
