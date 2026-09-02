@@ -6,6 +6,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](./LICENSE)
 [![YouTube](https://img.shields.io/badge/YouTube-@thenavidm-red?logo=youtube&logoColor=white)](https://youtube.com/@thenavidm?sub_confirmation=1)
 [![X](https://img.shields.io/badge/X-@thenavidm-black?logo=x)](https://x.com/thenavidm)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-thenavidm-0A66C2?logo=linkedin&logoColor=white)](https://linkedin.com/in/thenavidm)
 
 Reddit research for any AI agent, read-only. It finds the communities where a topic is actually discussed, ranks threads by how much real conversation they hold, pulls the comments, and hands back verbatim quotes with a link to every single one.
 
@@ -51,8 +52,6 @@ Claude: Running a research pass on Reddit.
 | 10 | [Configuration](#10-configuration) | Every setting |
 | 11 | [Troubleshooting](#11-troubleshooting) | When something breaks |
 | 12 | [FAQ](#12-faq) | Start here if you are new |
-
----
 
 ## 1. What you can ask it
 
