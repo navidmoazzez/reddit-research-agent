@@ -433,7 +433,7 @@ Every setting is an environment variable, and every one has a working default ex
 
 ## Versions
 
-See [VERSIONS.md](VERSIONS.md).
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## About the author
 

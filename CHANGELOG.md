@@ -1,4 +1,4 @@
-# Reddit Research Agent Versions
+# Reddit Research Agent changelog
 
 | Component | Version | Last Updated |
 |-----------|---------|--------------|

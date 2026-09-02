@@ -58,7 +58,7 @@ the `READ_ONLY` annotations spread in. MCP defaults `destructiveHint` and
 client as dangerous.
 
 Put constraints in the tool description, where they stay in context, not only in
-the README. Then update the tool count in the README table and in `VERSIONS.md`.
+the README. Then update the tool count in the README table and in `CHANGELOG.md`.
 
 ## Tests
 
