@@ -18,7 +18,7 @@ export const TOKEN_URL = "https://www.reddit.com/api/v1/access_token";
  * `<platform>:<app id>:<version> (by /u/<username>)`. Sending a generic one is
  * the fastest way to get rate limited into uselessness.
  */
-export const DEFAULT_USER_AGENT = `node:reddit-research-agent:v${VERSION} (by /u/navidmoazzez)`;
+export const DEFAULT_USER_AGENT = `node:reddit-research-agent:v${VERSION} (by /u/thenavidm)`;
 
 export type AuthMode = "auto" | "authenticated" | "anonymous";
 

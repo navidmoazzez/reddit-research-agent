@@ -74,7 +74,7 @@ must build a fresh `Response` per invocation or the second read fails.
 
 ## Commit identity
 
-Commits are authored `navidmoazzez <n@navid.me>`. The repo's local git config is
+Commits are authored `thenavidm <n@navid.me>`. The repo's local git config is
 already set, so a plain `git commit` does the right thing.
 
 Do not pass `-c user.email=` on the commit. That override is how commits end up

@@ -3,7 +3,7 @@
 ## Reporting a vulnerability
 
 Report it privately through
-[GitHub Security Advisories](https://github.com/navidmoazzez/reddit-research-agent/security/advisories/new),
+[GitHub Security Advisories](https://github.com/thenavidm/reddit-research-agent/security/advisories/new),
 not as a public issue.
 
 Expect an acknowledgement within a few days.

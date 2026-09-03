@@ -263,7 +263,7 @@ Save and start a new `codex` session.
 If you want to change the ranking or add an intent pattern:
 
 ```bash
-git clone https://github.com/navidmoazzez/reddit-research-agent.git
+git clone https://github.com/thenavidm/reddit-research-agent.git
 cd reddit-research-agent
 npm install
 npm run dev        # tsc --watch
@@ -451,7 +451,7 @@ If this is useful, star the repo and come say hi on [X](https://x.com/thenavidm)
 
 ## Security
 
-Found a vulnerability? [Report it privately](https://github.com/navidmoazzez/reddit-research-agent/security/advisories/new), not as a public issue. [SECURITY.md](SECURITY.md) covers what this server holds and why it has no write path.
+Found a vulnerability? [Report it privately](https://github.com/thenavidm/reddit-research-agent/security/advisories/new), not as a public issue. [SECURITY.md](SECURITY.md) covers what this server holds and why it has no write path.
 
 ## License
 

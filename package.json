@@ -35,10 +35,10 @@
   "homepage": "https://navid.me",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/navidmoazzez/reddit-research-agent.git"
+    "url": "git+https://github.com/thenavidm/reddit-research-agent.git"
   },
   "bugs": {
-    "url": "https://github.com/navidmoazzez/reddit-research-agent/issues"
+    "url": "https://github.com/thenavidm/reddit-research-agent/issues"
   },
   "keywords": [
     "mcp",
@@ -61,6 +61,6 @@
     "LICENSE"
   ],
   "contributors": [
-    "navidmoazzez <n@navid.me> (https://navid.me)"
+    "thenavidm <n@navid.me> (https://navid.me)"
   ]
 }
